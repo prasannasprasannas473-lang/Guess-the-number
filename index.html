@@ -1,43 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Guess the Number</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Guess the number</h1>
+        <input type="number" id="guess-input" placeholder="Enter a number between 1 to 100">
+        <div class="btn-container">
+            <button onclick="checkguess()">Check guess</button>
+            <button onclick="resetgame()">Reset game</button>
+        </div>
+        <p id="message"></p>
+    </div>
 
-  <div class="container">
-    <h1>Guess the Number</h1>
 
-    <input id="guessnumber" type="number" placeholder="Enter number 1-10">
 
-    <button onclick="CheckNumber()">Check</button>
 
-    <p id="result">You are Right/Wrong</p>
-    <p id="score">Score: 10</p>
-  </div>
 
-  <script>
-    var guessnumber = document.getElementById("guessnumber")
-    var result = document.getElementById("result")
-    var score = document.getElementById("score")
-
-    var randomnumber = Math.floor(Math.random() * 10) + 1
-    var totalscore = 10
-
-    function CheckNumber() {
-      var inputvalue = guessnumber.value
-
-      if (inputvalue == randomnumber) {
-        result.textContent = "Right!"
-        alert("You Won!")
-      } else {
-        result.textContent = " Wrong!"
-        totalscore=totalscore-1
-        score.textContent = "Score: " + totalscore
-      }
-    }
-  </script>
-
+   <script src="script.js"></script>
 </body>
 </html>
